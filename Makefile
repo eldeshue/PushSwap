@@ -5,7 +5,7 @@ NAME_B = push_swap_bonus
 # compiler
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-LDFLAGS = -L./ft_deque -lftdeque 
+LDFLAGS = -L./ft_deque -lftdeque
 
 # path
 FT_DEQUE_DIR = ./ft_deque
@@ -23,7 +23,7 @@ all		: $(NAME)
 bonus	: $(NAME_B)
 
 %.o : %.c
-	$(CC) $(CFLAGS) -g -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJS)
 	$(MAKE) -C $(FT_DEQUE_DIR)
@@ -31,7 +31,7 @@ $(NAME) : $(OBJS)
 
 $(NAME_B) : $(OBJS_B)
 	$(MAKE) -C $(FT_DEQUE_DIR)
-	$(CC) $(LDFLAGS) $(OBJS_B) -g -o $@
+	$(CC) $(LDFLAGS) $(OBJS_B) -o $@
 
 clean:
 	$(MAKE) -C $(FT_DEQUE_DIR) clean
