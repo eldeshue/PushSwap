@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
+/*   push_swap_parser.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 19:02:12 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/02 19:03:40 by dogwak           ###   ########.fr       */
+/*   Created: 2024/02/02 18:59:28 by dogwak            #+#    #+#             */
+/*   Updated: 2024/02/02 19:01:23 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_BONUS_H
-# define PUSH_SWAP_BONUS_H
+#ifndef PUSH_SWAP_PARSER_H
+# define PUSH_SWAP_PARSER_H
 
-// query selector
-// take string as an input and return proper interger value
-// integer value that matches the ab stack operator
+// input parser
+// to handle env input, need to split argv[]
+
+// argument sanitiy check
+// those tokens must be integers
+// range check and digit check needed.
 
 #endif
