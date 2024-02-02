@@ -1,6 +1,6 @@
 # result file name
 NAME = push_swap
-NAME_B = push_swap_bonus
+NAME_B = checker
 
 # compiler
 CC = cc
