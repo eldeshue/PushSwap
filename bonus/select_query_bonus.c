@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
+/*   select_query_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 19:02:12 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/07 19:54:35 by dogwak           ###   ########.fr       */
+/*   Created: 2024/02/07 13:00:09 by dogwak            #+#    #+#             */
+/*   Updated: 2024/02/07 19:56:42 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_BONUS_H
-# define PUSH_SWAP_BONUS_H
-
-# include "stack_ab_bonus.h"
+#include "stack_ab_bonus.h"
+#include "../libft/libft.h"
 
 // query selector
 // take string as an input and manipulate ab
 // return 0 if failed.
-int	select_query(t_stack_ab *this, const char *query);
+int	select_query(t_stack_ab *this, const char *query)
+{
+	if (ft_strncmp() == 0)
 
-#endif
+	else if (ft_strncmp() == 0)
+
+	else
+		return (0);
+	return (1);
+}
