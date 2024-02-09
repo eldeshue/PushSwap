@@ -35,12 +35,12 @@ $(NAME) : $(OBJS)
 	$(MAKE) -C $(LIBFT_DIR)
 	$(MAKE) -C $(FT_STRING_DIR)
 	$(MAKE) -C $(FT_VECTOR_DIR)
-	$(CC) $(LDFLAGS) $(OBJS) -o $@
+	$(CC) $(OBJS) -o $@ $(LDFLAGS)
 
 $(NAME_B) : $(OBJS_B)
 	$(MAKE) -C $(LIBFT_DIR)
 	$(MAKE) -C $(FT_STRING_DIR)
-	$(CC) $(LDFLAGS_B) $(OBJS_B) -o $@
+	$(CC) $(OBJS_B) -o $@ $(LDFLAGS_B)
 
 clean:
 	$(MAKE) -C $(LIBFT_DIR) clean
