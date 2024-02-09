@@ -3,21 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   manipulate_ab_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 20:01:15 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/06 20:01:28 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/08 19:48:40 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack_ab_bonus.h"
 
-// push
+void	pa(t_stack_ab *this)
+{
+	if (b_size(this) != 0)
+	{
+		this->pivot++;
+	}
+}
+
+void	pb(t_stack_ab *this)
+{
+	if (a_size(this) != 0)
+	{
+		this->pivot--;
+	}
+}
 
 // swap
+void	sa(t_stack_ab *this)
+{
+	int	tmp;
 
-// rotate
+	if (a_size(this) > 1)
+	{
+		tmp = this->pdata[this->pivot - 1];
+		this->pdata[this->pivot - 1] = this->pdata[this->pivot - 2];
+		this->pdata[this->pivot - 2] = tmp;
+	}
+}
 
-// reverse rotate
+void	sb(t_stack_ab *this)
+{
+	int	tmp;
 
-// is sorted
+	if (b_size(this) > 1)
+	{
+		tmp = this->pdata[this->pivot + 1];
+		this->pdata[this->pivot + 1] = this->pdata[this->pivot];
+		this->pdata[this->pivot] = tmp;
+	}
+}
+
+void	ss(t_stack_ab *this)
+{
+	sa(this);
+	sb(this);
+}
