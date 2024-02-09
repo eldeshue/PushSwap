@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utility_ab_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 20:00:38 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/07 14:37:47 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/08 19:39:41 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // check a ordered.
 int	is_ab_sorted(t_stack_ab *this)
 {
-	int			idx;
+	int	idx;
 
 	idx = -1;
 	if (this->pivot != this->size)
@@ -29,4 +29,14 @@ int	is_ab_sorted(t_stack_ab *this)
 		}
 	}
 	return (1);
+}
+
+int	a_size(t_stack_ab *this)
+{
+	return (this->pivot - this->a_bot);
+}
+
+int	b_size(t_stack_ab *this)
+{
+	return (this->b_bot - this->pivot + 1);
 }
