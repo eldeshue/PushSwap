@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:22:04 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/08 19:16:51 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/09 18:15:43 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 static int	is_number(const char *str)
 {
-	int				idx;
+	int	idx;
 
 	idx = -1;
 	if (str[0] == '-' || str[0] == '+')
 		idx = 0;
-	while (str[++idx] != NULL)
+	while (str[++idx] != '\0')
 		if (!ft_isdigit(str[idx]))
 			return (0);
 	return (1);
@@ -27,7 +27,7 @@ static int	is_number(const char *str)
 
 static int	get_number_start(const char *str)
 {
-	int				idx;
+	int	idx;
 
 	idx = 0;
 	if (str[idx] == '-' || str[idx] == '+')
@@ -57,7 +57,7 @@ static int	is_in_range(const char *str)
 
 int	ascii_number_sanity_check(const char **strs)
 {
-	int				idx;
+	int	idx;
 
 	idx = -1;
 	while (strs[++idx] != NULL)

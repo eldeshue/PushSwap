@@ -5,15 +5,21 @@ NAME_B = checker
 # compiler
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-LDFLAGS = -L./ft_deque -lftdeque
+LDFLAGS = -L./ft_vector -lftvector -L./ft_string -lftstring -L./libft -lft
+LDFLAGS_B = -L./ft_string -lftstring -L./libft -lft
 
 # path
-FT_DEQUE_DIR = ./ft_deque
 LIBFT_DIR = ./libft
+FT_STRING_DIR = ./ft_string
+FT_VECTOR_DIR = ./ft_vector
 
 SRCS = ./src/main.c \
 
 SRCS_B = ./bonus/main_bonus.c \
+			./bonus/select_query_bonus.c \
+			./bonus/normalize_int_bonus.c ./bonus/sanity_check_bonus.c \
+			./bonus/construct_ab_bonus.c ./bonus/utility_ab_bonus.c \
+			./bonus/manipulate_ab_bonus.c ./bonus/stack_ab_rotate_bonus.c ./bonus/stack_ab_rev_rotate_bonus.c \
 
 OBJS = $(SRCS:.c=.o)
 OBJS_B = $(SRCS_B:.c=.o)
@@ -26,19 +32,26 @@ bonus	: $(NAME_B)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJS)
-	$(MAKE) -C $(FT_DEQUE_DIR)
+	$(MAKE) -C $(LIBFT_DIR)
+	$(MAKE) -C $(FT_STRING_DIR)
+	$(MAKE) -C $(FT_VECTOR_DIR)
 	$(CC) $(LDFLAGS) $(OBJS) -o $@
 
 $(NAME_B) : $(OBJS_B)
-	$(MAKE) -C $(FT_DEQUE_DIR)
-	$(CC) $(LDFLAGS) $(OBJS_B) -o $@
+	$(MAKE) -C $(LIBFT_DIR)
+	$(MAKE) -C $(FT_STRING_DIR)
+	$(CC) $(LDFLAGS_B) $(OBJS_B) -o $@
 
 clean:
-	$(MAKE) -C $(FT_DEQUE_DIR) clean
+	$(MAKE) -C $(LIBFT_DIR) clean
+	$(MAKE) -C $(FT_VECTOR_DIR) clean
+	$(MAKE) -C $(FT_STRING_DIR) clean
 	rm -f $(OBJS) $(OBJS_B)
 
 fclean: clean
-	$(MAKE) -C $(FT_DEQUE_DIR) fclean
+	$(MAKE) -C $(LIBFT_DIR) fclean
+	$(MAKE) -C $(FT_VECTOR_DIR) fclean
+	$(MAKE) -C $(FT_STRING_DIR) fclean
 	rm -f $(NAME) $(NAME_B)
 
 re:

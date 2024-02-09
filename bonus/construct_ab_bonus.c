@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 20:01:48 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/08 19:37:31 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/09 18:00:01 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_stack_ab	*new_ab(char **strs)
 {
 	t_stack_ab	*this;
 	int			idx;
-	const int	str_cnt = ascii_number_sanity_check(strs);
+	const int	str_cnt = ascii_number_sanity_check((const char **)strs);
 
 	if (str_cnt == 0)
 		return (NULL);
