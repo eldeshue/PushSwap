@@ -13,9 +13,7 @@ SRCS	= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 			ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c \
 			ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c \
 			ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
-			ft_strdup_range.c ft_isspace.c ft_conv_itoa.c \
-			ft_syscall1.c ft_syscall2.c ft_syscall3.c \
-
+			ft_strdup_range.c ft_isspace.c ft_conv_itoa.c
 OBJS	= $(SRCS:.c=.o)
 
 OBJ_FILES = $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:00:23 by dogwak            #+#    #+#             */
-/*   Updated: 2024/01/10 18:50:50 by dogwak           ###   ########.fr       */
+/*   Updated: 2023/10/10 15:28:11 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t			idx;
 
 	length = ft_strlen(s);
-	result_str = (char *)ft_malloc(sizeof(char) * (length + 1));
+	result_str = (char *)malloc(sizeof(char) * (length + 1));
+	if (result_str == NULL)
+		return (NULL);
 	idx = 0;
 	while (idx < length)
 	{

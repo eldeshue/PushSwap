@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 21:09:18 by dogwak            #+#    #+#             */
-/*   Updated: 2024/01/10 18:48:47 by dogwak           ###   ########.fr       */
+/*   Updated: 2023/10/13 17:17:16 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ static char	**free_all(char **str_arr)
 	idx = -1;
 	while (str_arr[++idx] != NULL)
 	{
-		ft_free(str_arr[idx]);
+		free(str_arr[idx]);
 		str_arr[idx] = NULL;
 	}
-	ft_free(str_arr);
+	free(str_arr);
 	str_arr = NULL;
 	return (NULL);
 }
@@ -58,7 +58,7 @@ static	char	**set_var(int num_word, size_t *pidx,
 	*pidx = -1;
 	*pstr_idx = 0;
 	*pflag = 1;
-	return ((char **)ft_malloc(sizeof(char *) * (num_word + 1)));
+	return ((char **)malloc(sizeof(char *) * (num_word + 1)));
 }
 
 char	**ft_split(char const *s, char c)

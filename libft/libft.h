@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:29:39 by dogwak            #+#    #+#             */
-/*   Updated: 2024/01/10 19:53:00 by dogwak           ###   ########.fr       */
+/*   Updated: 2023/10/25 10:56:30 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-# include <sys/types.h>
+# include <unistd.h>
 
 char	*ft_strdup_range(const char *origin, size_t start, size_t end);
 void	ft_conv_itoa(char *str, long long num);
@@ -56,21 +56,5 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
-// wrapped systemcall
-int		ft_open(const char *pathname, int flags, mode_t mode);
-void	ft_close(int fd);
-void	*ft_malloc(size_t size);
-void	ft_free(void *ptr);
-
-ssize_t	ft_read(int fd, void *buf, size_t count);
-ssize_t	ft_write(int fd, const void *buf, size_t count);
-pid_t	ft_fork(void);
-void	ft_execve(const char *pathname, char *const argv[], char *const envp[]);
-
-int		ft_pipe(int pipefd[2]);
-int		ft_dup2(int oldfd, int newfd);
-pid_t	ft_wait(int *status);
-pid_t	ft_waitpid(pid_t pid, int *status, int options);
 
 #endif

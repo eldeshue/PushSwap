@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:56:38 by dogwak            #+#    #+#             */
-/*   Updated: 2024/01/10 18:51:45 by dogwak           ###   ########.fr       */
+/*   Updated: 2023/10/10 15:53:58 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 static char	*set_empty_string(char **str)
 {
-	*str = (char *)ft_malloc(sizeof(char));
+	*str = (char *)malloc(sizeof(char));
+	if (*str == NULL)
+		return (NULL);
 	(*str)[0] = '\0';
 	return (*str);
 }
@@ -33,7 +35,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	substr_s = s_len - start;
 	substr_s = (len >= substr_s) * substr_s + (len < substr_s) * len + 1;
-	str = (char *)ft_malloc((substr_s) * sizeof(char));
+	str = (char *)malloc((substr_s) * sizeof(char));
+	if (str == NULL)
+		return (NULL);
 	idx = 0;
 	while (idx < len && s[start + idx] != '\0')
 	{

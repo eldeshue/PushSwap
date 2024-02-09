@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:25:20 by dogwak            #+#    #+#             */
-/*   Updated: 2024/01/10 18:48:01 by dogwak           ###   ########.fr       */
+/*   Updated: 2023/10/07 15:27:37 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	ft_write(fd, s, sizeof(char) * ft_strlen(s));
+	write(fd, s, sizeof(char) * ft_strlen(s));
 }

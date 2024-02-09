@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:20:48 by dogwak            #+#    #+#             */
-/*   Updated: 2024/01/10 18:46:13 by dogwak           ###   ########.fr       */
+/*   Updated: 2023/10/10 15:25:02 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ char	*ft_itoa(int n)
 	size_t				str_size;
 
 	str_size = get_str_length_from_int((long long)n);
-	str = (char *)ft_malloc(str_size * sizeof(char));
+	str = (char *)malloc(str_size * sizeof(char));
+	if (str == NULL)
+		return (NULL);
 	ft_conv_itoa(str, n);
 	return (str);
 }

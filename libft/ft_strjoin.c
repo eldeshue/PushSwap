@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:09:43 by dogwak            #+#    #+#             */
-/*   Updated: 2024/01/10 18:50:20 by dogwak           ###   ########.fr       */
+/*   Updated: 2023/10/12 18:59:38 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	dst_size = ft_strlen(s1);
 	dst_size += ft_strlen(s2) + 1;
-	str = (char *)ft_malloc((dst_size) * sizeof(char));
+	str = (char *)malloc((dst_size) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	ft_strlcpy(str, s1, dst_size);

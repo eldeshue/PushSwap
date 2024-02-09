@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:13:53 by dogwak            #+#    #+#             */
-/*   Updated: 2024/01/10 18:46:27 by dogwak           ###   ########.fr       */
+/*   Updated: 2023/10/13 17:17:44 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t				idx;
 
 	alloc_size = count * size;
-	palloc = (unsigned char *)ft_malloc(alloc_size);
+	palloc = (unsigned char *)malloc(alloc_size);
+	if (palloc == NULL)
+		return (NULL);
 	idx = 0;
 	while (idx < alloc_size)
 	{
