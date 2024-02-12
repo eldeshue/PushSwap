@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:22:04 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/09 18:15:43 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/12 20:42:35 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int	is_in_range(const char *str)
 	if (num_len == 10)
 	{
 		if (str[0] == '-')
-			return (ft_strncmp(str + start_pos, "2147483648", 10) < 0);
+			return (ft_strncmp(str + start_pos, "2147483648", 10) <= 0);
 		else
 			return (ft_strncmp(str + start_pos, "2147483647", 10) < 0);
 	}
@@ -63,8 +63,9 @@ int	ascii_number_sanity_check(const char **strs)
 	while (strs[++idx] != NULL)
 		if (!is_number(strs[idx]))
 			return (0);
+	idx = -1;
 	while (strs[++idx] != NULL)
 		if (!is_in_range(strs[idx]))
 			return (0);
-	return (1);
+	return (idx);
 }
