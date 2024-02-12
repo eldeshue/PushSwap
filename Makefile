@@ -4,7 +4,7 @@ NAME_B = checker
 
 # compiler
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 LDFLAGS = -L./ft_vector -lftvector -L./ft_string -lftstring -L./libft -lft
 LDFLAGS_B = -L./ft_string -lftstring -L./libft -lft
 
