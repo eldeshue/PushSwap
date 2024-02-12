@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   normalize_int_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:40:35 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/07 17:58:06 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/12 20:40:53 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ static int	binary_search(const int *arr, int target, int begin, int end)
 		mid = (begin + end) >> 1;
 		if (arr[mid] == target)
 			return (mid);
-		else if (target >= arr[mid])
-			begin = mid;
+		else if (arr[mid] < target)
+			begin = mid + 1;
 		else
-			end = mid + 1;
+			end = mid - 1;
 	}
 	return (begin);
 }
@@ -34,10 +34,10 @@ static int	binary_search(const int *arr, int target, int begin, int end)
 // include both, left and right.
 static void	quick_sort(int *arr, int left, int right)
 {
-	int				i;
-	int				j;
-	const int		pivot = arr[(left + right) >> 1];
-	int				temp;
+	int			i;
+	int			j;
+	const int	pivot = arr[(left + right) >> 1];
+	int			temp;
 
 	i = left;
 	j = right;
@@ -62,8 +62,8 @@ static void	quick_sort(int *arr, int left, int right)
 
 int	normailize_int(int *arr, int size)
 {
-	int		*sorted_arr;
-	int		idx;
+	int	*sorted_arr;
+	int	idx;
 
 	sorted_arr = (int *)malloc(sizeof(int) * size);
 	if (sorted_arr == NULL)

@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 20:00:38 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/08 19:39:41 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/12 20:15:28 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	is_ab_sorted(t_stack_ab *this)
 	int	idx;
 
 	idx = -1;
-	if (this->pivot != this->size)
+	if (b_size(this) != 0)
 		return (0);
 	while (++idx < this->size)
 	{
@@ -38,5 +38,5 @@ int	a_size(t_stack_ab *this)
 
 int	b_size(t_stack_ab *this)
 {
-	return (this->b_bot - this->pivot + 1);
+	return (this->b_bot - this->pivot - 1);
 }
