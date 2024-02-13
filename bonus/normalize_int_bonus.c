@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:40:35 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/12 20:40:53 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/13 16:12:57 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,19 @@ static void	quick_sort(int *arr, int left, int right)
 		quick_sort(arr, i, right);
 }
 
+static int	duplicate_check(int *arr, int size)
+{
+	int	idx;
+
+	idx = -1;
+	while (++idx < size - 1)
+	{
+		if (arr[idx] == arr[idx + 1])
+			return (0);
+	}
+	return (1);
+}
+
 int	normailize_int(int *arr, int size)
 {
 	int	*sorted_arr;
@@ -72,6 +85,8 @@ int	normailize_int(int *arr, int size)
 	while (++idx < size)
 		sorted_arr[idx] = arr[idx];
 	quick_sort(sorted_arr, 0, size - 1);
+	if (!duplicate_check(sorted_arr, size))
+		return (0);
 	idx = -1;
 	while (++idx < size)
 		arr[idx] = binary_search(sorted_arr, arr[idx], 0, size);
