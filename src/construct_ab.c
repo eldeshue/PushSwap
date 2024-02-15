@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 20:01:48 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/12 20:55:54 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/15 16:21:14 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ t_stack_ab	*new_ab(char **strs)
 	while (--idx >= 0)
 		this->pdata[idx] = ft_atoi(strs[str_cnt - 1 - idx]);
 	this->a_bot = 0;
-	this->b_bot = str_cnt;
-	this->pivot = str_cnt - 1;
+	this->b_bot = str_cnt - 1;
+	this->pivot = str_cnt;
 	this->size = str_cnt;
 	if (!normailize_int(this->pdata, this->size))
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:22:06 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/12 20:53:15 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/15 14:57:47 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ra(t_stack_ab *this)
 	int	idx;
 	int	tmp;
 
-	if (a_size(this) <= 0)
+	if (a_size(this) <= 1)
 		return ;
 	idx = this->pivot - 1;
 	tmp = this->pdata[idx];
@@ -34,7 +34,7 @@ void	rb(t_stack_ab *this)
 	int	idx;
 	int	tmp;
 
-	if (b_size(this) <= 0)
+	if (b_size(this) <= 1)
 		return ;
 	idx = this->pivot;
 	tmp = this->pdata[idx];

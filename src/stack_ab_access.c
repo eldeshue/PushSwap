@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 20:01:20 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/13 20:03:09 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/15 15:27:21 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,28 @@
 
 int	a_top(t_stack_ab *this)
 {
-	return (this->pdata[this->pivot - 1]);
+	if (a_size(this) > 0)
+		return (this->pdata[this->pivot - 1]);
+	return (-1);
 }
 
 int	b_top(t_stack_ab *this)
 {
-	return (this->pdata[this->pivot]);
+	if (b_size(this) > 0)
+		return (this->pdata[this->pivot]);
+	return (-1);
 }
 
 int	a_bot(t_stack_ab *this)
 {
-	return (this->pdata[this->a_bot]);
+	if (a_size(this) > 0)
+		return (this->pdata[this->a_bot]);
+	return (-1);
 }
 
 int	b_bot(t_stack_ab *this)
 {
-	return (this->pdata[this->b_bot]);
+	if (b_size(this) > 0)
+		return (this->pdata[this->b_bot]);
+	return (-1);
 }
