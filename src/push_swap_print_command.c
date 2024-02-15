@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 16:59:48 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/14 14:18:34 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/15 15:37:01 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,14 @@ static int	merge_command(int cmd1, int cmd2)
 		return (RRR);
 	else if ((cmd1 == SA && cmd2 == SB) || (cmd1 == SB && cmd2 == SA))
 		return (SS);
-	else
+	else if ((cmd1 == PA && cmd2 == PB) || (cmd1 == PB && cmd2 == PA))
 		return (-1);
+	else
+		return (-2);
 }
 
 // command decode
-static char	*decode_command(int cmd)
+char	*decode_command(int cmd)
 {
 	if (cmd == PA)
 		return ("pa\n");
@@ -61,13 +63,20 @@ void	print_command_buffer(t_ft_vector *this)
 	const int	*pdata = this->pbuffer;
 
 	idx = -1;
-	while (++idx < this->size)
+	while (++idx < (int)this->size)
 	{
-		merged_cmd = merge_command(pdata[idx], pdata[idx + 1]);
-		if (merged_cmd >= 0)
+		if (idx < (int)this->size - 1)
 		{
-			idx++;
-			ft_putstr_fd(decode_command(merged_cmd), 1);
+			merged_cmd = merge_command(pdata[idx], pdata[idx + 1]);
+			if (merged_cmd >= 0)
+			{
+				idx++;
+				ft_putstr_fd(decode_command(merged_cmd), 1);
+			}
+			else if (merged_cmd == -1)
+				idx++;
+			else
+				ft_putstr_fd(decode_command(pdata[idx]), 1);
 		}
 		else
 			ft_putstr_fd(decode_command(pdata[idx]), 1);
