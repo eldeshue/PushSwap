@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 20:58:14 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/13 17:27:13 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/15 15:23:39 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 t_ft_vector	*new_command_buffer(void);
 void		delete_command_buffer(t_ft_vector *this);
 
+char		*decode_command(int cmd);
 void		print_command_buffer(t_ft_vector *this);
 
 #endif

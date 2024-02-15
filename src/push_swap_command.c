@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 16:58:59 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/13 17:26:22 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/15 13:49:04 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	set_int(void *paddr, void *pval)
 {
-	*(int *)paddr = pval;
+	*(int *)paddr = *(int *)pval;
 	return (1);
 }
 

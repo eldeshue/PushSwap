@@ -14,6 +14,13 @@ FT_STRING_DIR = ./ft_string
 FT_VECTOR_DIR = ./ft_vector
 
 SRCS = ./src/main.c \
+			./src/stack_ab_access.c ./src/stack_ab_push_swap.c \
+			./src/stack_ab_rev_rotate.c ./src/stack_ab_rotate.c \
+			./src/construct_ab.c ./src/stack_ab_utility.c \
+			./src/normalize_int.c ./src/sanity_check.c \
+			./src/psa_base.c ./src/psa_quick.c \
+			./src/push_swap_command.c ./src/push_swap_print_command.c \
+
 
 SRCS_B = ./bonus/main_bonus.c \
 			./bonus/select_query_bonus.c \
