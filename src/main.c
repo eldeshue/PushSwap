@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 15:42:12 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/13 15:59:11 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/13 19:43:33 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,17 @@ void	delete_strs(char **strs)
 
 void	solve_push_swap(t_stack_ab *pab)
 {
-	// construct command buffer vector
-	// sort ab, command buffer filled.
-	// print result, (optimization, decoding)
-	// destruct command buffer
+	t_ft_vector	*p_cmd_buffer;
+
+	p_cmd_buffer = new_command_buffer();
+	if (p_cmd_buffer == NULL)
+	{
+		ft_putstr_fd("Error\n", 2);
+		exit(1);
+	}
+	sort_ab(pab, p_cmd_buffer);
+	print_command_buffer(p_cmd_buffer);
+	delete_command_buffer(p_cmd_buffer);
 }
 
 int	main(int argc, char *argv[])
@@ -38,7 +45,7 @@ int	main(int argc, char *argv[])
 	char		**tokens;
 	t_stack_ab	*pab;
 
-	if (argc == 1) // no argument, do nothing
+	if (argc == 1)
 		exit(1);
 	if (argc == 2)
 	{
