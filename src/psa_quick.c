@@ -6,14 +6,13 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 19:41:54 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/15 13:27:55 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/15 16:11:59 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_algorithm.h"
 #include "push_swap_command.h"
 
-//
 void	do_cmd(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int cmd)
 {
 	if (cmd == PA)
@@ -38,7 +37,7 @@ void	do_cmd(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int cmd)
 		sb(pab);
 	else if (cmd == SS)
 		ss(pab);
-	p_cmd_vec->push_back(p_cmd_vec, cmd);
+	p_cmd_vec->push_back(p_cmd_vec, &cmd);
 }
 
 // half open, end not included, O(5 * N / 3)
@@ -91,7 +90,7 @@ void	quick_a(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int start, int end)
 			do_cmd(pab, p_cmd_vec, PA);
 		quick_a(pab, p_cmd_vec, small_pivot, big_pivot);
 		idx = -1;
-		while (++idx < partition_size)
+		while (++idx < (end - start) - 2 * partition_size)
 			do_cmd(pab, p_cmd_vec, PA);
 		quick_a(pab, p_cmd_vec, start, small_pivot);
 	}
@@ -139,7 +138,7 @@ void	sort_ab(t_stack_ab *pab, t_ft_vector *p_cmd_vec)
 			do_cmd(pab, p_cmd_vec, PA);
 		quick_a(pab, p_cmd_vec, small_pivot, big_pivot);
 		idx = -1;
-		while (++idx < partition_size)
+		while (++idx < pab->size - 2 * partition_size)
 			do_cmd(pab, p_cmd_vec, PA);
 		quick_a(pab, p_cmd_vec, 0, small_pivot);
 	}
