@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 19:41:54 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/15 16:11:59 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/15 17:22:52 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,15 +84,18 @@ void	quick_a(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int start, int end)
 	else
 	{
 		split_a3(pab, p_cmd_vec, start, end);
-		quick_a(pab, p_cmd_vec, big_pivot, end);
+		if (!is_a_sorted_n(pab, partition_size))
+			quick_a(pab, p_cmd_vec, big_pivot, end);
 		idx = -1;
 		while (++idx < partition_size)
 			do_cmd(pab, p_cmd_vec, PA);
-		quick_a(pab, p_cmd_vec, small_pivot, big_pivot);
+		if (!is_a_sorted_n(pab, partition_size))
+			quick_a(pab, p_cmd_vec, small_pivot, big_pivot);
 		idx = -1;
 		while (++idx < (end - start) - 2 * partition_size)
 			do_cmd(pab, p_cmd_vec, PA);
-		quick_a(pab, p_cmd_vec, start, small_pivot);
+		if (!is_a_sorted_n(pab, (end - start) - 2 * partition_size))
+			quick_a(pab, p_cmd_vec, start, small_pivot);
 	}
 }
 
@@ -132,14 +135,17 @@ void	sort_ab(t_stack_ab *pab, t_ft_vector *p_cmd_vec)
 	else
 	{
 		split_first(pab, p_cmd_vec, 0, pab->size);
-		quick_a(pab, p_cmd_vec, big_pivot, pab->size);
+		if (!is_a_sorted_n(pab, partition_size))
+			quick_a(pab, p_cmd_vec, big_pivot, pab->size);
 		idx = -1;
 		while (++idx < partition_size)
 			do_cmd(pab, p_cmd_vec, PA);
-		quick_a(pab, p_cmd_vec, small_pivot, big_pivot);
+		if (!is_a_sorted_n(pab, partition_size))
+			quick_a(pab, p_cmd_vec, small_pivot, big_pivot);
 		idx = -1;
 		while (++idx < pab->size - 2 * partition_size)
 			do_cmd(pab, p_cmd_vec, PA);
-		quick_a(pab, p_cmd_vec, 0, small_pivot);
+		if (!is_a_sorted_n(pab, pab->size - 2 * partition_size))
+			quick_a(pab, p_cmd_vec, 0, small_pivot);
 	}
 }
