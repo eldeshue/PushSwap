@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 15:57:22 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/19 12:49:58 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/19 15:15:45 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ static void	split_2(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int size, int dir)
 	const int	pivot = get_pivot(pab, size, dir);
 	int			idx;
 
-	idx = -1;
 	if (dir)
 		return (split_2b(pab, p_cmd_vec, size, pivot));
-	while (++idx)
+	idx = -1;
+	while (++idx < size)
 	{
 		if (pivot < a_top(pab))
 			do_cmd(pab, p_cmd_vec, RA);
@@ -79,7 +79,7 @@ static void	sort_4(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int dir)
 static void	sort_5(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int dir)
 {
 	split_2(pab, p_cmd_vec, 5, dir);
-	if (pab->pdata[pab->pivot - 2] > a_top(pab))
+	if (pab->pdata[pab->pivot - 2] < a_top(pab))
 		do_cmd(pab, p_cmd_vec, SA);
 	sort_3b(pab, p_cmd_vec);
 	return ;
