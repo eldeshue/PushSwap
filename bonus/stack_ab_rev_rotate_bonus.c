@@ -6,19 +6,19 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:22:01 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/09 16:39:36 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/19 14:10:25 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack_ab_bonus.h"
 
-void rra(t_stack_ab *this)
+void	rra(t_stack_ab *this)
 {
-	int idx;
-	int tmp;
+	int	idx;
+	int	tmp;
 
 	if (a_size(this) <= 0)
-		return;
+		return ;
 	idx = this->a_bot;
 	tmp = this->pdata[idx];
 	while (idx < this->pivot - 1)
@@ -29,13 +29,13 @@ void rra(t_stack_ab *this)
 	this->pdata[this->pivot - 1] = tmp;
 }
 
-void rrb(t_stack_ab *this)
+void	rrb(t_stack_ab *this)
 {
-	int idx;
-	int tmp;
+	int	idx;
+	int	tmp;
 
 	if (b_size(this) <= 0)
-		return;
+		return ;
 	idx = this->b_bot;
 	tmp = this->pdata[idx];
 	while (idx > this->pivot)
@@ -46,7 +46,7 @@ void rrb(t_stack_ab *this)
 	this->pdata[this->pivot] = tmp;
 }
 
-void rrr(t_stack_ab *this)
+void	rrr(t_stack_ab *this)
 {
 	rra(this);
 	rrb(this);

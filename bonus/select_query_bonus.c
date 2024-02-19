@@ -6,17 +6,17 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 13:00:09 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/09 17:06:25 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/19 14:10:51 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack_ab_bonus.h"
 #include "../libft/libft.h"
+#include "stack_ab_bonus.h"
 
 // query selector
 // take string as an input and manipulate ab
 // return 0 if failed.
-int select_query(t_stack_ab *this, const char *query, const int query_size)
+int	select_query(t_stack_ab *this, const char *query, const int query_size)
 {
 	if (ft_strncmp(query, "pa", query_size) == 0 && query_size == 2)
 		pa(this);
