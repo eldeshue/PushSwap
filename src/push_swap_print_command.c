@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_print_command.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 16:59:48 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/15 15:37:01 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/19 16:09:54 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ static int	merge_command(int cmd1, int cmd2)
 		return (RRR);
 	else if ((cmd1 == SA && cmd2 == SB) || (cmd1 == SB && cmd2 == SA))
 		return (SS);
-	else if ((cmd1 == PA && cmd2 == PB) || (cmd1 == PB && cmd2 == PA))
+	else if ((cmd1 == PA && cmd2 == PB) || (cmd1 == PB && cmd2 == PA)
+		|| (cmd1 == RA && cmd2 == RRA) || (cmd1 == RRA && cmd2 == RA)
+		|| (cmd1 == RB && cmd2 == RRB) || (cmd1 == RRB && cmd2 == RB))
 		return (-1);
 	else
 		return (-2);
