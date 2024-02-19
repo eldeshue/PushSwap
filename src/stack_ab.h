@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 19:05:13 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/15 17:15:00 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/16 16:44:24 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void		delete_ab(t_stack_ab *this);
 // utility
 int			is_ab_sorted(t_stack_ab *this);
 int			is_a_sorted_n(t_stack_ab *this, int size);
+int			is_b_sorted_n(t_stack_ab *this, int size);
 int			a_size(t_stack_ab *this);
 int			b_size(t_stack_ab *this);
 

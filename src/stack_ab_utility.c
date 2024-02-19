@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 20:00:38 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/15 17:18:20 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/16 16:49:44 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,25 @@ int	is_a_sorted_n(t_stack_ab *this, int size)
 	while (++idx < size)
 	{
 		if (this->pdata[this->pivot - 1 - idx] != ++expected_val)
+			return (0);
+	}
+	return (1);
+}
+
+int	is_b_sorted_n(t_stack_ab *this, int size)
+{
+	int	idx;
+	int	expected_val;
+
+	if (size > b_size(this))
+		return (0);
+	if (size <= 1)
+		return (1);
+	idx = 0;
+	expected_val = b_top(this);
+	while (++idx < size)
+	{
+		if (this->pdata[this->pivot + idx] != --expected_val)
 			return (0);
 	}
 	return (1);

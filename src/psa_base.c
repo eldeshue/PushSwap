@@ -6,38 +6,92 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 19:41:32 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/15 13:28:27 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/19 12:46:58 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_algorithm.h"
 #include "push_swap_command.h"
 
-/*
-static void	sort_3(void)
+void	push_a_n(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int size)
 {
+	int	idx;
+
+	idx = -1;
+	while (++idx < size)
+		do_cmd(pab, p_cmd_vec, PA);
 }
 
-static void	sort_4(void)
+int	get_pivot(t_stack_ab *pab, int size, int dir)
 {
+	int	max_val;
+	int	min_val;
+	int	idx;
+	int	cur_val;
+
+	max_val = -1;
+	min_val = 2147483647;
+	idx = -1;
+	while (++idx < size)
+	{
+		if (dir)
+			cur_val = pab->pdata[pab->pivot + idx];
+		else
+			cur_val = pab->pdata[pab->pivot - 1 - idx];
+		if (max_val < cur_val)
+			max_val = cur_val;
+		if (min_val > cur_val)
+			min_val = cur_val;
+	}
+	return ((min_val + max_val) >> 1);
 }
 
-static void	sort_5(void)
+void	sort_3a(t_stack_ab *pab, t_ft_vector *p_cmd_vec)
 {
-}
-*/
+	char		*pattern;
+	int			first;
+	const int	second = pab->pdata[pab->pivot - 2];
+	const int	third = pab->pdata[pab->pivot - 3];
 
-// optimized insertion sort
-void	sort_base_case(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int size)
+	first = pab->pdata[pab->pivot - 1];
+	if (first < third && third < second)
+		pattern = "180";
+	else if (second < first && first < third)
+		pattern = "8";
+	else if (third < first && first < second)
+		pattern = "1808";
+	else if (second < third && third < first)
+		pattern = "8180";
+	else if (third < second && second < first)
+		pattern = "1140708";
+	else
+		pattern = "";
+	first = -1;
+	while (pattern[++first] != '\0')
+		do_cmd(pab, p_cmd_vec, pattern[first] - '0');
+}
+
+void	sort_3b(t_stack_ab *pab, t_ft_vector *p_cmd_vec)
 {
-	if (size == 2 && a_top(pab) > pab->pdata[pab->pivot - 2])
-		do_cmd(pab, p_cmd_vec, SA);
-	/*
-	else if (size == 3)
-		;
-	else if (size == 4)
-		;
-	else if (size == 5)
-		;
-		*/
+	char		*pattern;
+	int			first;
+	const int	second = pab->pdata[pab->pivot + 1];
+	const int	third = pab->pdata[pab->pivot + 2];
+
+	first = pab->pdata[pab->pivot];
+	if (first > third && third > second)
+		pattern = "0900";
+	else if (second > first && first > third)
+		pattern = "9000";
+	else if (third > first && first > second)
+		pattern = "09080";
+	else if (second > third && third > first)
+		pattern = "90900";
+	else if (third > second && second > first)
+		pattern = "904070";
+	else
+		pattern = "000";
+	first = -1;
+	while (pattern[++first] != '\0')
+		do_cmd(pab, p_cmd_vec, pattern[first] - '0');
 }

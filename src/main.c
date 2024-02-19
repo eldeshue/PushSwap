@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 15:42:12 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/15 14:19:59 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/16 13:38:40 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	solve_push_swap(t_stack_ab *pab)
 		ft_putstr_fd("Error\n", 2);
 		exit(1);
 	}
-	sort_ab(pab, p_cmd_buffer);
+	if (!is_ab_sorted(pab))
+		sort_ab(pab, p_cmd_buffer);
 	print_command_buffer(p_cmd_buffer);
 	delete_command_buffer(p_cmd_buffer);
 }

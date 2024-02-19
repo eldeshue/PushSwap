@@ -18,7 +18,8 @@ SRCS = ./src/main.c \
 			./src/stack_ab_rev_rotate.c ./src/stack_ab_rotate.c \
 			./src/construct_ab.c ./src/stack_ab_utility.c \
 			./src/normalize_int.c ./src/sanity_check.c \
-			./src/psa_base.c ./src/psa_quick.c \
+			./src/psa_base.c ./src/psa_base2.c \
+			./src/psa_quick.c ./src/psa_quick_a.c ./src/psa_quick_b.c \
 			./src/push_swap_command.c ./src/push_swap_print_command.c \
 
 

@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 20:57:11 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/14 16:27:34 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/19 12:48:16 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,24 @@
 
 // execute command and save the command
 void	do_cmd(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int cmd);
+void	push_a_n(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int size);
+int		get_pivot(t_stack_ab *pab, int size, int dir);
 
 // optimized insertion
 // base case
-void	sort_base_case(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int size);
+void	sort_3a(t_stack_ab *pab, t_ft_vector *p_cmd_vec);
+void	sort_3b(t_stack_ab *pab, t_ft_vector *p_cmd_vec);
+void	sort_base_case(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int size,
+			int dir);
 
 // quick + insertion
 // recursively
 // [), half open, end not included
+void	split_a3(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int start, int end);
 void	quick_a(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int start, int end);
+
+void	split_b3(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int start, int end);
+void	quick_b(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int start, int end);
 
 // sort
 void	sort_ab(t_stack_ab *pab, t_ft_vector *p_cmd_vec);
