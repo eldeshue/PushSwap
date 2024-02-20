@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   normalize_int.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:40:35 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/13 16:17:03 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/20 15:55:00 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,13 @@ int	normailize_int(int *arr, int size)
 		sorted_arr[idx] = arr[idx];
 	quick_sort(sorted_arr, 0, size - 1);
 	if (!duplicate_check(sorted_arr, size))
+	{
+		free(sorted_arr);
 		return (0);
+	}
 	idx = -1;
 	while (++idx < size)
 		arr[idx] = binary_search(sorted_arr, arr[idx], 0, size);
+	free(sorted_arr);
 	return (1);
 }
