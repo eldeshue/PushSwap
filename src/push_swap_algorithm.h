@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 20:57:11 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/19 12:48:16 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/20 13:42:47 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 void	do_cmd(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int cmd);
 void	push_a_n(t_stack_ab *pab, t_ft_vector *p_cmd_vec, int size);
 int		get_pivot(t_stack_ab *pab, int size, int dir);
+
+// pattern for optimized 3 element.
+char	*get_pattern_3a_roll(int first, int second, int third);
+char	*get_pattern_3b_roll(int first, int second, int third);
 
 // optimized insertion
 // base case

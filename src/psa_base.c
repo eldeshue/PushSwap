@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 19:41:32 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/19 12:46:58 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/20 14:16:46 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,9 @@ void	sort_3a(t_stack_ab *pab, t_ft_vector *p_cmd_vec)
 	const int	third = pab->pdata[pab->pivot - 3];
 
 	first = pab->pdata[pab->pivot - 1];
-	if (first < third && third < second)
+	if (a_size(pab) == 3)
+		pattern = get_pattern_3a_roll(first, second, third);
+	else if (first < third && third < second)
 		pattern = "180";
 	else if (second < first && first < third)
 		pattern = "8";
@@ -79,7 +81,9 @@ void	sort_3b(t_stack_ab *pab, t_ft_vector *p_cmd_vec)
 	const int	third = pab->pdata[pab->pivot + 2];
 
 	first = pab->pdata[pab->pivot];
-	if (first > third && third > second)
+	if (b_size(pab) == 3)
+		pattern = sort_3b_roll(first, second, third);
+	else if (first > third && third > second)
 		pattern = "0900";
 	else if (second > first && first > third)
 		pattern = "9000";
