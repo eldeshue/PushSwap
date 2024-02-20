@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sanity_check_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:22:04 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/12 20:42:35 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/20 16:11:29 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	is_in_range(const char *str)
 		if (str[0] == '-')
 			return (ft_strncmp(str + start_pos, "2147483648", 10) <= 0);
 		else
-			return (ft_strncmp(str + start_pos, "2147483647", 10) < 0);
+			return (ft_strncmp(str + start_pos, "2147483647", 10) <= 0);
 	}
 	else if (num_len < 10)
 		return (1);
