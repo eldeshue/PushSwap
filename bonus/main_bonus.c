@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 18:56:14 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/13 16:03:15 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/20 15:04:11 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,12 @@ int	main(int argc, char *argv[])
 	t_stack_ab	*pab;
 
 	if (argc == 1)
-		exit(1);
+		exit(0);
 	if (argc == 2)
 	{
 		tokens = ft_split(argv[1], ' ');
+		if (*tokens == NULL)
+			exit(0);
 		pab = new_ab(tokens);
 		delete_strs(tokens);
 	}
