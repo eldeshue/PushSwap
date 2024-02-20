@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 15:42:12 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/20 14:59:08 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/20 16:02:15 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	solve_push_swap(t_stack_ab *pab)
 	if (p_cmd_buffer == NULL)
 	{
 		ft_putstr_fd("Error\n", 2);
+		delete_ab(pab);
 		exit(1);
 	}
 	if (!is_ab_sorted(pab))
