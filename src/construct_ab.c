@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 20:01:48 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/20 14:56:02 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/20 15:07:26 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ t_stack_ab	*new_ab(char **strs)
 	int			idx;
 	const int	str_cnt = ascii_number_sanity_check((const char **)strs);
 
+	if (str_cnt == 0)
+		return (NULL);
 	this = (t_stack_ab *)malloc(sizeof(t_stack_ab));
 	if (this == NULL)
 		return (NULL);
