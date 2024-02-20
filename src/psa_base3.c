@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   psa_base3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:40:48 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/20 14:15:08 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/20 14:24:28 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char	*get_pattern_3a_roll(int first, int second, int third)
 		return ("5");
 	else if (third < second && second < first)
 		return ("85");
+	else
+		return (NULL);
 }
 
 char	*get_pattern_3b_roll(int first, int second, int third)
@@ -42,4 +44,6 @@ char	*get_pattern_3b_roll(int first, int second, int third)
 		return ("0900");
 	else if (third < second && second < first)
 		return ("000");
+	else
+		return (NULL);
 }

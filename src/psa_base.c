@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   psa_base.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogwak <dogwak@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 19:41:32 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/20 14:16:46 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/20 14:23:32 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	sort_3b(t_stack_ab *pab, t_ft_vector *p_cmd_vec)
 
 	first = pab->pdata[pab->pivot];
 	if (b_size(pab) == 3)
-		pattern = sort_3b_roll(first, second, third);
+		pattern = get_pattern_3b_roll(first, second, third);
 	else if (first > third && third > second)
 		pattern = "0900";
 	else if (second > first && first > third)
