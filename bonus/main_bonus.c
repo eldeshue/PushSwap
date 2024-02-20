@@ -6,7 +6,7 @@
 /*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 18:56:14 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/20 15:04:11 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/02/20 16:00:51 by dogwak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ void	check_push_swap(t_stack_ab *pab)
 	t_ft_string	buffer;
 
 	buffer = construct_ftstr();
+	if (buffer.pbuffer == NULL)
+	{
+		delete_ab(pab);
+		write(2, "Error\n", 6);
+		exit(1);
+	}
 	while (1)
 	{
 		buffer.getline(&buffer, 0);
