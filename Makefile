@@ -39,6 +39,10 @@ bonus	: $(NAME_B)
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+boj		: ./boj_27657/27657.cc
+	c++ -g -std=c++17 $< -o 27657
+	rm -rf 27657.dSYM
+
 $(NAME) : $(OBJS)
 	$(MAKE) -C $(LIBFT_DIR)
 	$(MAKE) -C $(FT_STRING_DIR)
@@ -61,6 +65,7 @@ fclean: clean
 	$(MAKE) -C $(FT_VECTOR_DIR) fclean
 	$(MAKE) -C $(FT_STRING_DIR) fclean
 	rm -f $(NAME) $(NAME_B)
+	rm -f 27657
 
 re:
 	make fclean
